@@ -4,6 +4,7 @@
     background:url('/header_img.png')no-repeat;
     background-size: contain;
     position: relative;
+    border-radius: 10px;
 }
 
 .header-contents{
@@ -14,6 +15,7 @@
     max-width: 50%;
     bottom: 35%;
     left: 6vw;
+    animation: fadeIn 3s;
 }
 .header-contents button{
     border: none;

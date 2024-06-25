@@ -134,14 +134,14 @@ export const food_list = [
         category: "Cake"
     }, {
         _id: "3",
-        name: "Rainbow Cake",
+        name: "Rainbowis Cake",
         image: food_3,
         price: 16,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Cake"
     }, {
         _id: "4",
-        name: "Mango Cake",
+        name: "Mango flavor Cake",
         image: food_4,
         price: 24,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
@@ -183,7 +183,7 @@ export const food_list = [
         category: "Sweets"
     }, {
         _id: "10",
-        name: "Sponge Rosogulla",
+        name: "Rosogulla",
         image: food_10,
         price: 22,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
