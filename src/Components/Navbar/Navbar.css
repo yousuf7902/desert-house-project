@@ -23,6 +23,25 @@
     align-items: center;
     gap:40px;
 }
+.navbar-input{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(255, 205, 233);
+    height: 30px;
+    border-radius: 4px;
+    font-size: 1rem;
+    border: none;
+}
+.navbar-icon{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.navbar-icon img{
+    width: 20px;
+}
 
 .navbar button{
     background: transparent;

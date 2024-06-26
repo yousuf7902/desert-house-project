@@ -9,11 +9,18 @@ const Navbar = () => {
       <ul className='navbar-menu'>
         <li onClick={()=>setMenu("home")} className={menu==="home"? "active":""}>home</li>
         <li onClick={()=>setMenu("menu")} className={menu==="menu"? "active":""}>menu</li>
-        <li onClick={()=>setMenu("about")} className={menu==="about"? "active":""}>about</li>
+        <li onClick={()=>setMenu("mobile-app")} className={menu==="mobile-app"? "active":""}>mobile-app</li>
         <li onClick={()=>setMenu("contact-us")} className={menu==="contact-us"? "active":""}>contact-us</li>
       </ul>
       <div className='navbar-right'>
-        <img src={assets.search_icon} alt='search-icon'/>
+        <div className='navbar-input'>
+        <input type='text' placeholder='Search here'/>
+        <div className='navbar-icon'>
+        <img src={assets.search_icon} alt='Search-icon'/>
+        </div>
+        
+        </div>
+      
         <div className='navbar-search-icon'>
             <img src={assets.basket_icon} alt='basket-icon'/>
             <div className='dot'></div>
