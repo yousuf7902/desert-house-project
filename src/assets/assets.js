@@ -205,7 +205,7 @@ export const food_list = [
     },
     {
         _id: "13",
-        name: "Black forest",
+        name: "Pineapple pastry",
         image: food_13,
         price: 12,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
@@ -213,21 +213,21 @@ export const food_list = [
     },
     {
         _id: "14",
-        name: "Chocolate",
+        name: "Chocolate pastry",
         image: food_14,
         price: 18,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Pastry"
     }, {
         _id: "15",
-        name: "Strawberry",
+        name: "Strawberry pastry",
         image: food_15,
         price: 16,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Pastry"
     }, {
         _id: "16",
-        name: "Butterscoth",
+        name: "Butterscoth pastry",
         image: food_16,
         price: 24,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
@@ -262,7 +262,7 @@ export const food_list = [
         category: "Pudding"
     }, {
         _id: "21",
-        name: "Vanilla flavour donuts",
+        name: "Vanilla cream donuts",
         image: food_21,
         price: 14,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",

@@ -54,3 +54,23 @@ border: none;
     align-items: center;
     margin-top: 40px;
 }
+.footer-content-right li{
+text-align: center;
+}
+
+@media(max-width:750px){
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    .footer-content-right li{
+     text-align: center;
+    }
+    .footer-content-center li{
+        text-align: center;
+    }
+    .footer-copyright{
+        text-align: center;
+    }
+}
