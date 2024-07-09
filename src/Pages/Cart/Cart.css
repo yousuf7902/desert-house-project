@@ -38,15 +38,15 @@
 .cart-total-details{
     display: flex;
     justify-content: space-between;
-    color:red;
+    color:firebrick;
 }
 .cart-total hr{
     margin: 10px 0px;
 }
 .cart-total button{
     border: none;
-    color: black;
-    background-color: rgb(243, 243, 42);
+    color: white;
+    background-color: rgb(183, 91, 183);
     width: max(15vw,200px);
     padding: 12px 0px;
     border-radius: 4px;
@@ -63,7 +63,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:greenyellow;
+    background-color:rgb(242, 176, 227);
     border-radius: 4px;
 }
 .cart-promocode-input input{
@@ -75,7 +75,7 @@
 .cart-promocode-input button{
     width: max(10vw,150px);
     padding: 12px 5px;
-    background-color: red;
+    background-color: rgb(167, 73, 151);
     border: none;
     color: white;
     border-radius: 4px;
