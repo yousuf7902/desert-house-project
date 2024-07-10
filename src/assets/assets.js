@@ -121,7 +121,7 @@ export const food_list = [
         _id: "1",
         name: "Pistachio Cake",
         image: food_1,
-        price: 12,
+        price: 1200,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Cake"
     },
@@ -129,77 +129,77 @@ export const food_list = [
         _id: "2",
         name: "Chocolate Cake",
         image: food_2,
-        price: 18,
+        price: 1000,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Cake"
     }, {
         _id: "3",
         name: "Rainbowis Cake",
         image: food_3,
-        price: 16,
+        price: 1500,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Cake"
     }, {
         _id: "4",
         name: "Mango flavor Cake",
         image: food_4,
-        price: 24,
+        price: 1300,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Cake"
     }, {
         _id: "5",
         name: "Coffee Cupcake",
         image: food_5,
-        price: 14,
+        price: 90,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Cupcake"
     }, {
         _id: "6",
         name: "Vanilla Cupcake",
         image: food_6,
-        price: 12,
+        price: 70,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Cupcake"
     }, {
         _id: "7",
         name: "Strawberry Cupcake",
         image: food_7,
-        price: 20,
+        price: 80,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Cupcake"
     }, {
         _id: "8",
         name: "Cookie Cupcake",
         image: food_8,
-        price: 15,
+        price: 110,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Cupcake"
     }, {
         _id: "9",
         name: "Laddu",
         image: food_9,
-        price: 14,
+        price: 500,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Sweets"
     }, {
         _id: "10",
         name: "Rosogulla",
         image: food_10,
-        price: 22,
+        price: 700,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Sweets"
     }, {
         _id: "11",
         name: "Cham cham",
         image: food_11,
-        price: 10,
+        price: 450,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Sweets"
     }, {
         _id: "12",
         name: "Rasmalai",
         image: food_12,
-        price: 12,
+        price: 650,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Sweets"
     },
@@ -207,7 +207,7 @@ export const food_list = [
         _id: "13",
         name: "Pineapple pastry",
         image: food_13,
-        price: 12,
+        price: 110,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Pastry"
     },
@@ -215,77 +215,77 @@ export const food_list = [
         _id: "14",
         name: "Chocolate pastry",
         image: food_14,
-        price: 18,
+        price: 100,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Pastry"
     }, {
         _id: "15",
         name: "Strawberry pastry",
         image: food_15,
-        price: 16,
+        price: 120,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Pastry"
     }, {
         _id: "16",
         name: "Butterscoth pastry",
         image: food_16,
-        price: 24,
+        price: 130,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Pastry"
     }, {
         _id: "17",
         name: "Regular pudding",
         image: food_17,
-        price: 14,
+        price: 100,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Pudding"
     }, {
         _id: "18",
         name: "Mixed fruits flavour",
         image: food_18,
-        price: 12,
+        price: 120,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Pudding"
     }, {
         _id: "19",
         name: "Mango flavour",
         image: food_19,
-        price: 20,
+        price: 150,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Pudding"
     }, {
         _id: "20",
         name: "Strawberry flavour",
         image: food_20,
-        price: 15,
+        price: 130,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Pudding"
     }, {
         _id: "21",
         name: "Vanilla cream donuts",
         image: food_21,
-        price: 14,
+        price: 70,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Donuts"
     }, {
         _id: "22",
         name: "Peanut butter donuts",
         image: food_22,
-        price: 22,
+        price: 85,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Donuts"
     }, {
         _id: "23",
         name: "Strawberry donuts",
         image: food_23,
-        price: 10,
+        price: 80,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Donuts"
     }, {
         _id: "24",
         name: "Chocolate donuts",
         image: food_24,
-        price: 12,
+        price: 75,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Donuts"
     },
@@ -293,7 +293,7 @@ export const food_list = [
         _id: "25",
         name: "Honeybutter waffle",
         image: food_25,
-        price: 12,
+        price: 220,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Waffle"
     },
@@ -301,49 +301,49 @@ export const food_list = [
         _id: "26",
         name: "Creamcheese waffel",
         image: food_26,
-        price: 18,
+        price: 180,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Waffle"
     }, {
         _id: "27",
         name: "Regular waffel",
         image: food_27,
-        price: 16,
+        price: 160,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Waffle"
     }, {
         _id: "28",
         name: "Buttermilk waffel",
         image: food_28,
-        price: 24,
+        price: 240,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Waffle"
     }, {
         _id: "29",
         name: "Balloons",
         image: food_29,
-        price: 14,
+        price: 60,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Accessories"
     }, {
         _id: "30",
         name: "Foil balloons",
         image: food_30,
-        price: 12,
+        price: 100,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Accessories"
     }, {
         _id: "31",
         name: "Candles",
         image: food_31,
-        price: 20,
+        price: 50,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Accessories"
     }, {
         _id: "32",
         name: "Hat",
         image: food_32,
-        price: 15,
+        price: 90,
         description: "Desert is a delightful, often artfully adorned and celebrated at joyful occasions.",
         category: "Accessories"
     }
