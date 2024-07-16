@@ -31,7 +31,7 @@ const createToken=(id)=>{
 }
 //register User 
 const registerUser = async(req,res)=>{
-    const {name,password,email}=req.body;
+    const {name,address,phone,password,email}=req.body;
 try {
     //checking is user already exists
     const exists=await userModel.findOne({email});
@@ -50,6 +50,8 @@ try {
     const hashedPassword=await bcrypt.hash(password,salt);
     const newUser=new userModel({
         name:name,
+        address:address,
+        phone:phone,
         email:email,
         password:hashedPassword
     })
