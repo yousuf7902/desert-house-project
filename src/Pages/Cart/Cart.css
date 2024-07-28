@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
     align-items: center;
+    justify-items: center;
     color: blue;
     font-size: max(1vw,12px);
 }
@@ -80,6 +81,70 @@
     color: white;
     border-radius: 4px;
 }
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.empty-cart{
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.empty-cart button{
+    padding:10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: hsl(355, 71%, 90%);
+    color: #666;
+    font-weight: bold;
+}
+
+.btn-decrement,
+.btn-increment {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-decrement:hover,
+.btn-increment:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-decrement:disabled,
+.btn-increment:disabled {
+  background-color: #cccccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.quantity {
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 30px;
+  text-align: center;
+}
+
 @media(max-width:750px){
     .cart-bottom{
         flex-direction:column-reverse;

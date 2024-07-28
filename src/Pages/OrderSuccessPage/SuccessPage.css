@@ -1,0 +1,97 @@
+.success-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.success-page h1 {
+    color: #4caf50;
+    text-align: center;
+}
+
+.order-details {
+    background-color: #e7dfdf;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.order-details h2 {
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.order-summary,
+.customer-details,
+.order-status {
+    margin-top: 20px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.order-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+.item-details h4 {
+    margin: 0;
+    color: #333;
+}
+
+.item-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.total-amount {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px;
+}
+
+.customer-details p,
+.order-status p {
+    margin: 5px 0;
+}
+
+.paid-status {
+    color: green;
+}
+
+.unpaid-status {
+    color: red;
+}
+.shopmore-btn{
+    text-align: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #666;
+}

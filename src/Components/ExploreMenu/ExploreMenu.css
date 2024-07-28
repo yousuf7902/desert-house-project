@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: -70px;
+    margin-top: 4rem;
 }
 .explore-menu h1{
     color: gray;
     font-weight: 500;
+    z-index: 30;
 }
 .explore-menu-text{
     max-width: 60%;
