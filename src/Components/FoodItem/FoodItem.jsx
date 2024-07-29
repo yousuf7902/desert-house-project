@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./FoodItem.css";
+import "./FoodItem.css"
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../Context/StoreContext";
 const FoodItem = ({ id, name, price, description, image, stock }) => {
@@ -27,7 +27,7 @@ const FoodItem = ({ id, name, price, description, image, stock }) => {
                         <img onClick={() => addToCart(id)} src={assets.add_icon_green} alt="" />
                     </div>
                 )}
-                {stock < 10 ? <p className="food-item-stock">{stock}</p> : null}
+                {stock < 10 ? <p className="food-item-stock">{stock} In stock</p> : null}
             </div>
             <div className="food-item-info">
                 <div className="food-item-name-rating">

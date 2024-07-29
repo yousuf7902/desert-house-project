@@ -1,0 +1,35 @@
+.category-foods {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.categories button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 20px;
+}
+
+.categories button:hover,
+.categories button.active {
+  background-color: #FFB6BD;
+  color: #444;
+}
+

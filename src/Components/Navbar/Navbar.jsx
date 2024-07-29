@@ -45,31 +45,31 @@ const Navbar = ({ setShowLogin }) => {
                     </Link>
                 </li>
                 <li>
-                    <a
-                        href="#explore-menu"
-                        onClick={() => setMenu("menu")}
-                        className={menu === "menu" ? "active" : ""}
+                    <Link
+                        to="/foods"
+                        onClick={() => setMenu("foods")}
+                        className={menu === "foods" ? "active" : ""}
                     >
-                        Menu
-                    </a>
+                        Foods
+                    </Link>
                 </li>
                 <li>
-                    <a
-                        href="#app-download"
-                        onClick={() => setMenu("mobile-app")}
-                        className={menu === "mobile-app" ? "active" : ""}
+                    <Link
+                        to="/foods/latest"
+                        onClick={() => setMenu("latest")}
+                        className={menu === "latest" ? "active" : ""}
                     >
-                        Mobile-app
-                    </a>
+                        Latest Food
+                    </Link>
                 </li>
                 <li>
-                    <a
-                        href="#footer"
-                        onClick={() => setMenu("contact-us")}
-                        className={menu === "contact-us" ? "active" : ""}
+                    <Link
+                        to="/foods/category"
+                        onClick={() => setMenu("category")}
+                        className={menu === "category" ? "active" : ""}
                     >
-                        Contact-us
-                    </a>
+                        Choose Category
+                    </Link>
                 </li>
             </ul>
             <div className="navbar-right">

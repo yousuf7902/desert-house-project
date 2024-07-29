@@ -8,6 +8,9 @@ import Footer from "./Components/Footer/Footer";
 import LoginPopup from "./Components/LoginPopup/LoginPopup";
 import SuccessPage from "./Pages/OrderSuccessPage/SuccessPage";
 import MyOrders from "./Pages/MyOrders/MyOrders";
+import AllFoods from "./Pages/AllFoods/AllFoods";
+import LatestFoods from "./Pages/LatestFoods/LatestFoods";
+import CategoryFoods from "./Pages/CategoryFoods/CategoryFoods";
 const App = () => {
     const [showLogin, setShowLogin] = useState(false);
     return (
@@ -21,6 +24,9 @@ const App = () => {
                     <Route path="/order" element={<PlaceOrder />} />
                     <Route path="/order-success/:id" element={<SuccessPage />} />
                     <Route path="/myorders" element={<MyOrders />} />
+                    <Route path="/foods" element={<AllFoods />} />
+                    <Route path="/foods/latest" element={<LatestFoods/>}/>
+                    <Route path="/foods/category" element={<CategoryFoods />} />
                 </Routes>
             </div>
             <Footer />
