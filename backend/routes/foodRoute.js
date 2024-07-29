@@ -6,6 +6,7 @@ import {
     listFood,
     popularFoods,
     removeFood,
+    singleFood,
 } from "../controllers/foodController.js";
 import multer from "multer";
 
@@ -28,5 +29,5 @@ foodRouter.post("/remove", removeFood);
 foodRouter.get("/category", categoryData);
 foodRouter.get("/latest", latestFoods);
 foodRouter.get("/popular", popularFoods);
-
+foodRouter.get("/:id", singleFood)
 export default foodRouter;

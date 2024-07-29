@@ -81,4 +81,17 @@ const popularFoods = async (req, res) => {
     }
 };
 
-export { addFood, listFood, removeFood, categoryData, latestFoods,popularFoods };
+//single food by their id
+const singleFood = async (req, res) => {
+    try {
+        const food = await foodModel.findById({
+            _id: req.params.id,
+        });
+        res.json({ success: true, food });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+export { addFood, listFood, removeFood, categoryData, latestFoods, popularFoods, singleFood };

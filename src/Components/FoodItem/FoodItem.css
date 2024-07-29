@@ -86,6 +86,7 @@
     box-shadow: 0px 0px 10px gainsboro;
     transition: 0.3s;
     animation: fadeIn 1s;
+    cursor: pointer;
 }
 
 .food-item-image {
@@ -120,7 +121,7 @@
 }
 
 .food-item-price {
-    color: red;
+    color: #FF6D6D;
     font-size: 22px;
     font-weight: 500;
     margin: 10px 0px;

@@ -1,46 +1,46 @@
 .category-foods {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
 h1 {
-  text-align: center;
-  color: #282892;
+    text-align: center;
+    color: #282892;
 }
 
 .categories {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 .categories button {
-  background-color: #f0f0f0;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 20px;
-  color: #444;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+    color: #444;
 }
 
 .categories button:hover,
 .categories button.active {
-  background-color: #FFB6BD;
-  color: #444;
+    background-color: #ffb6bd;
+    color: #444;
 }
 
-.category-header{
-  color: #555;
-  width:75%;
-  font-size: 30px;
-  background-color: #FFB6BD;
-  margin:5rem auto;
-  padding: 15px;
-  border-radius: 50px;
+.category-header {
+    color: #555;
+    width: 75%;
+    font-size: 30px;
+    background-color: #ffb6bd;
+    margin: 5rem auto;
+    padding: 15px;
+    border-radius: 50px;
+    text-align: center;
 }
-

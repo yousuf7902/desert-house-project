@@ -27,6 +27,7 @@
     color: #333;
     margin-bottom: 10px;
     color: #282892;
+    text-align: center;
 }
 
 .header-foods p {
@@ -71,7 +72,7 @@
 
 select {
     padding: 5px 10px;
-    border: 1px solid #282892d0;;
+    border: 1px solid #282892d0;
     border-radius: 4px;
     background-color: white;
     font-size: 0.9em;

@@ -3,6 +3,9 @@ import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../Context/StoreContext";
+import { FiLogOut } from "react-icons/fi";
+import { FaShoppingBag } from "react-icons/fa";
+import { FaBagShopping } from "react-icons/fa6";
 const Navbar = ({ setShowLogin }) => {
     const [menu, setMenu] = useState("home");
     const { token, setToken, cartItems, food_list, url } = useContext(StoreContext);
@@ -122,13 +125,15 @@ const Navbar = ({ setShowLogin }) => {
                         <ul className="nav-profile-dropdown">
                             <li>
                                 <Link to="/myorders" className="list_style">
-                                    <img src={assets.bag_icon} alt="" />
+                                    {/* <img src={assets.bag_icon} alt="" /> */}
+                                    <FaBagShopping size={20} />
                                     <p>Orders</p>
                                 </Link>
                             </li>
                             <hr />
                             <li onClick={logout}>
-                                <img src={assets.logout_icon} alt="" />
+                                {/* <img src={assets.logout_icon} alt="" /> */}
+                                <FiLogOut size={20} />
                                 <p>Logout</p>
                             </li>
                         </ul>
