@@ -9,7 +9,6 @@ const Navbar = ({ setShowLogin }) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchData, setSearchData] = useState("");
 
-
     console.log(cartItems);
 
     const navigate = useNavigate();

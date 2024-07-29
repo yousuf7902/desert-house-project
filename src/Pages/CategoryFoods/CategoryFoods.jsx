@@ -30,7 +30,7 @@ const CategoryFoods = () => {
 
     return (
         <div className="category-foods">
-            <h1>Our Categories</h1>
+            <h1 style={{ textTransform: "uppercase" }}>Our Categories</h1>
             <div className="categories">
                 {categories.map((category) => (
                     <button
@@ -43,7 +43,7 @@ const CategoryFoods = () => {
                 ))}
             </div>
             {selectedCategory === "" ? (
-                <h1>Choose your category to show the foods</h1>
+                <h1 className="category-header">Choose your category to show the foods</h1>
             ) : (
                 <>
                     <div className="filter-area">
@@ -75,7 +75,6 @@ const CategoryFoods = () => {
                     <FoodDisplay data={filteredFoods} sortBy={sortBy} show={show} />
                 </>
             )}
-
         </div>
     );
 };

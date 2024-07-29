@@ -1,0 +1,13 @@
+.home-food-display{
+    margin: 30px 0px 50px 0px;
+}
+.home-food-display h2{
+    font-size: max(2vw,24px);
+    font-weight: 600;
+}
+.home-food-display-list{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 30px;
+    gap:25px;
+}

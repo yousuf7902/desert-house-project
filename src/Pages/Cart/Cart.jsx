@@ -26,7 +26,7 @@ const Cart = ({ setShowLogin }) => {
             setShowLogin(true);
         }
     };
-    console.log(setShowLogin)
+    console.log(setShowLogin);
     const orderNowHandler = () => {
         navigate("/");
     };
@@ -52,6 +52,7 @@ const Cart = ({ setShowLogin }) => {
                         <br />
                         <hr />
                         {food_list.map((item, index) => {
+                            console.log(cartItems[item._id]);
                             if (cartItems[item._id] > 0) {
                                 return (
                                     <div>
@@ -73,7 +74,9 @@ const Cart = ({ setShowLogin }) => {
                                                 <button
                                                     className="btn-increment"
                                                     onClick={() => incrementItem(item._id)}
-                                                    /* disabled={item.qty >= item.countInStock} */
+                                                    disabled={
+                                                        cartItems[item._id] >= item.countInStock
+                                                    }
                                                 >
                                                     +
                                                 </button>

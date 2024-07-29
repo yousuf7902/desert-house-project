@@ -7,8 +7,8 @@
 }
 
 .navbar .logo {
-    width: 95px;
-    height: 95px;
+    width: 110px;
+    height: 110px;
 }
 
 .navbar-menu {
@@ -18,8 +18,9 @@
     align-items: center;
     list-style: none;
     gap: 20px;
-    color: rgb(97, 91, 91);
+    color:#282892;
     font-size: 20px;
+    font-weight: 600;
     width: 50%;
     padding: 0;
     margin: 0;

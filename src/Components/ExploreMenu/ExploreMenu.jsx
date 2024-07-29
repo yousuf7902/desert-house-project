@@ -18,7 +18,7 @@ const ExploreMenu = () => {
         fetchCategoryData();
     }, []);
 
-    const categories = [...new Set(categoryData.map((item) => item))].slice(0, 8);
+    const categories = [...new Set(categoryData.map((item) => item))].slice(0, 6);
 
     const categoryHandler = (category) => {
       navigate(`/foods?category=${category}`)
@@ -26,7 +26,7 @@ const ExploreMenu = () => {
 
     return (
         <div className="explore-menu" id="explore-menu">
-            <h1>Discover Our Menu</h1>
+            <h1>Discover Our Popular Menu</h1>
             <p>
                 Delight in our selection of scrumptious cakes, mouth-watering pastries, and heavenly
                 sweets. Each treat is crafted with care to bring joy to your taste buds and make

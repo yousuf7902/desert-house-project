@@ -53,6 +53,7 @@
     background-position: center;
     border-radius: 25px;
     position: relative;
+    margin-top: 20px;
  }
  .header-contents{
     position: absolute;

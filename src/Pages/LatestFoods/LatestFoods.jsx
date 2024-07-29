@@ -23,7 +23,7 @@ const LatestFoods = () => {
       <div>
           <div className="all-foods">
               <div className="header-foods">
-                  <h1>Top {latestFoods?.length} Latest Foods</h1>
+                  <h1 style={{textTransform:'uppercase'}}>Top {latestFoods?.length} Latest Foods</h1>
                   <p>From Our Kitchen to Your Table!</p>
               </div>
               <div className="filter-area">

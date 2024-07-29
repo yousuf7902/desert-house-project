@@ -23,14 +23,15 @@
 }
 
 .header-foods h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #333;
     margin-bottom: 10px;
+    color: #282892;
 }
 
 .header-foods p {
     font-size: 1.2em;
-    color: #666;
+    color: #282892d0;
 }
 
 .filter-area {
@@ -46,6 +47,7 @@
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
+    color: #282892;
 }
 
 .filter-right {
@@ -53,20 +55,23 @@
     gap: 20px;
 }
 
-.sort-by, .show {
+.sort-by,
+.show {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #282892;
 }
 
-.sort-by label, .show label {
+.sort-by label,
+.show label {
     font-size: 0.9em;
-    color: #666;
+    color: #282892d0;
 }
 
 select {
     padding: 5px 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #282892d0;;
     border-radius: 4px;
     background-color: white;
     font-size: 0.9em;
@@ -74,5 +79,4 @@ select {
 
 select:focus {
     outline: none;
-    border-color: #4CAF50;
 }

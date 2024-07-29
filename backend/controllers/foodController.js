@@ -68,4 +68,17 @@ const latestFoods = async (req, res) => {
     }
 };
 
-export { addFood, listFood, removeFood, categoryData, latestFoods };
+//popular foods based on the total sell
+const popularFoods = async (req, res) => {
+    try {
+        const popularFoods = await foodModel.find().sort({
+            totalSell: -1,
+        });
+        res.json({ success: true, popularFoods });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+export { addFood, listFood, removeFood, categoryData, latestFoods,popularFoods };

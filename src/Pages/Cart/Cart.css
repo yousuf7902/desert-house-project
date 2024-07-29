@@ -1,95 +1,102 @@
-.cart{
+.cart {
     margin-top: 100px;
 }
-.cart-items-title{
+.cart-items-title {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
     align-items: center;
     justify-items: center;
-    color: blue;
-    font-size: max(1vw,12px);
+    color: #282892;
+    font-weight: 500;
+    font-size: max(1vw, 12px);
 }
-.cart-items-item{
+.cart-items-item {
     margin: 10px 0px;
-    color: black;
+    color: #282892;
 }
-.cart-items-item img{
+.cart-items-item img {
     width: 50px;
 }
-.cart hr{
+.cart hr {
     height: 1px;
-    background-color:#ebd2e6;
+    background-color: #ebd2e6;
     border: none;
 }
-.cart-items-item .cross{
+.cart-items-item .cross {
     cursor: pointer;
 }
-.cart-bottom{
+.cart-bottom {
     margin-top: 80px;
     display: flex;
     justify-content: space-between;
-    gap: max(12vw,20px);
+    gap: max(12vw, 20px);
 }
-.cart-total{
+.cart-total {
     flex: 1;
     display: flex;
     flex-direction: column;
+    color: #282892;
     gap: 20px;
 }
-.cart-total-details{
+.cart-total-details {
     display: flex;
     justify-content: space-between;
-    color:firebrick;
+    color: #282892;
 }
-.cart-total hr{
+.cart-total hr {
     margin: 10px 0px;
 }
-.cart-total button{
+.cart-total button {
     border: none;
-    color: white;
-    background-color: rgb(183, 91, 183);
-    width: max(15vw,200px);
+    /* color: white; */
+    /* background-color: rgb(183, 91, 183); */
+    background-color: #ffc0cb;
+    color: #444;
+    font-weight: 500;
+    width: max(15vw, 200px);
     padding: 12px 0px;
     border-radius: 4px;
     cursor: pointer;
 }
-.cart-promocode{
+.cart-promocode {
     flex: 1;
 }
-.cart-promocode p{
-    color:black;
+.cart-promocode p {
+    color: black;
 }
-.cart-promocode-input{
+.cart-promocode-input {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:rgb(242, 176, 227);
+    border:1px solid #ffc0cb;
     border-radius: 4px;
 }
-.cart-promocode-input input{
+.cart-promocode-input input {
     background-color: transparent;
     border: none;
     outline: none;
     padding-left: 10px;
 }
-.cart-promocode-input button{
-    width: max(10vw,150px);
+.cart-promocode-input button {
+    width: max(10vw, 150px);
     padding: 12px 5px;
-    background-color: rgb(167, 73, 151);
+    background-color: #ffc0cb;
+    color: #444;
+    font-weight: 500;
+    cursor: pointer;
     border: none;
-    color: white;
     border-radius: 4px;
 }
 
 .quantity-control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
-.empty-cart{
+.empty-cart {
     height: 20vh;
     display: flex;
     flex-direction: column;
@@ -98,8 +105,8 @@
     gap: 20px;
 }
 
-.empty-cart button{
-    padding:10px 20px;
+.empty-cart button {
+    padding: 10px 20px;
     border: none;
     outline: none;
     border-radius: 20px;
@@ -111,45 +118,46 @@
 
 .btn-decrement,
 .btn-increment {
-  width: 30px;
-  height: 30px;
-  border: none;
-  background-color: #f0f0f0;
-  color: #333;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    /* background-color: #f0f0f0;
+    color: #333; */
+    background-color:  #282892;
+    color:white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-decrement:hover,
 .btn-increment:hover {
-  background-color: #e0e0e0;
+    background-color:  rgba(87, 87, 167, 0.76);
 }
 
 .btn-decrement:disabled,
 .btn-increment:disabled {
-  background-color: #cccccc;
-  color: #666;
-  cursor: not-allowed;
+    background-color:  rgba(87, 87, 167, 0.76);
+    cursor: not-allowed;
 }
 
 .quantity {
-  font-size: 18px;
-  font-weight: bold;
-  min-width: 30px;
-  text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
 }
 
-@media(max-width:750px){
-    .cart-bottom{
-        flex-direction:column-reverse;
+@media (max-width: 750px) {
+    .cart-bottom {
+        flex-direction: column-reverse;
     }
-    .cart-promocode{
+    .cart-promocode {
         justify-content: start;
     }
 }

@@ -7,7 +7,7 @@
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #282892;
 }
 
 .categories {
@@ -25,11 +25,22 @@ h1 {
   cursor: pointer;
   transition: background-color 0.3s;
   border-radius: 20px;
+  color: #444;
 }
 
 .categories button:hover,
 .categories button.active {
   background-color: #FFB6BD;
   color: #444;
+}
+
+.category-header{
+  color: #555;
+  width:75%;
+  font-size: 30px;
+  background-color: #FFB6BD;
+  margin:5rem auto;
+  padding: 15px;
+  border-radius: 50px;
 }
 

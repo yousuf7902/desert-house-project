@@ -42,7 +42,6 @@ const FoodDisplay = ({data, category, sortBy, show }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [filteredList, setFilteredList] = useState([]);
 
-    console.log(category);
 
     useEffect(() => {
         const filtered = data ? data : food_list.filter(
