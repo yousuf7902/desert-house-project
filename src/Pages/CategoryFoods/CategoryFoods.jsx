@@ -30,7 +30,7 @@ const CategoryFoods = () => {
 
     return (
         <div className="category-foods">
-            <h1 style={{ textTransform: "uppercase", textAlign: "center" }}>Our Categories</h1>
+            <h1 >Our Categories</h1>
             <div className="categories">
                 {categories.map((category) => (
                     <button

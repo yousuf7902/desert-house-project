@@ -4,6 +4,11 @@
     padding: 20px;
     font-family: Arial, sans-serif;
 }
+.category-foods h1:first-child {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;
+}
 
 h1 {
     text-align: center;

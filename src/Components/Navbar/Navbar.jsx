@@ -90,7 +90,6 @@ const Navbar = ({ setShowLogin }) => {
                             {searchData &&
                                 searchData.map((item, index) => (
                                     <div key={index} className="search-item">
-                                        {console.log(item)}
                                         <div>
                                             <img
                                                 src={url + "/images/" + item.image}
@@ -118,7 +117,7 @@ const Navbar = ({ setShowLogin }) => {
                     {/* <div className={Object.keys(cartItems).length === 0 ? "" : "dot"}></div> */}
                 </div>
                 {!token ? (
-                    <button onClick={() => setShowLogin(true)}>Sign In</button>
+                    <button onClick={() => setShowLogin(true)}>Log In</button>
                 ) : (
                     <div className="navbar-profile">
                         <img src={assets.profile_icon} alt="" />

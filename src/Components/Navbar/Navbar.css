@@ -78,11 +78,12 @@
 }
 
 .navbar button {
+    width: 20%;
     background: transparent;
     font-size: 16px;
     color: rgb(118, 114, 114);
-    border: 1px solid green;
-    padding: 10px 30px;
+    border: 2px solid #FFC0CB;
+    padding: 10px 20px;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;

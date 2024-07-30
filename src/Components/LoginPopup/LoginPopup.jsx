@@ -51,7 +51,7 @@ const LoginPopup = ({setShowLogin}) => {
         <div className='login-popup-inputs'>
             {currState==="Login"?<></>:<input name='name' onChange={onChangeHandler} value={data.name} type='text' placeholder='Your name' required />}
             {currState==="Login"?<></>:<input name='address' onChange={onChangeHandler} value={data.address} type='text' placeholder='Your address' required />}
-            {currState==="Login"?<></>:<input name='phone' onChange={onChangeHandler} value={data.phone} type='Number' placeholder='Phone Number' required />}
+            {currState==="Login"?<></>:<input name='phone' onChange={onChangeHandler} value={data.phone} type='text' placeholder='Phone Number' required />}
             <input name='email' onChange={onChangeHandler} value={data.email} type='email' placeholder='Your email' required />
             <input name='password' onChange={onChangeHandler} value={data.password} type='password' placeholder='password' required />
         </div>
