@@ -1,5 +1,6 @@
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
+import foodModel from "../models/foodModel.js";
 import SSLCommerzPayment from "sslcommerz-lts";
 import { ObjectId } from "mongodb";
 
@@ -20,6 +21,14 @@ const placeOrder = async (req, res) => {
         });
         await createOrder.save();
         await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
+
+        createOrder.items.map(async (order) => {
+            const food = await foodModel.findById(order._id);
+            food.countInStock = food.countInStock - order.quantity;
+            food.totalSell = food.totalSell + order.quantity;
+            await food.save();
+        });
+
         res.json({ success: true, order: createOrder });
     } catch (error) {
         console.log(error);
