@@ -2,6 +2,7 @@ import express from "express";
 import {
     addFood,
     categoryData,
+    editFood,
     latestFoods,
     listFood,
     popularFoods,
@@ -30,4 +31,7 @@ foodRouter.get("/category", categoryData);
 foodRouter.get("/latest", latestFoods);
 foodRouter.get("/popular", popularFoods);
 foodRouter.get("/:id", singleFood)
+foodRouter.put("/edit/:id", upload.single("image"), editFood)
+
+
 export default foodRouter;

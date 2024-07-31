@@ -6,9 +6,8 @@ import FoodDisplay from "../../Components/FoodDisplay/FoodDisplay";
 
 const CategoryFoods = () => {
     const [categoryData, setCategoryData] = useState([]);
-    const [foods, setFoods] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("");
-    const { url, food_list } = useContext(StoreContext);
+    const { url, food_list, fetchFoodList } = useContext(StoreContext);
     const [sortBy, setSortBy] = useState("Default");
     const [show, setShow] = useState(10);
 
@@ -19,6 +18,7 @@ const CategoryFoods = () => {
                 .then((res) => setCategoryData(res.data.categories));
         };
         fetchCategoryData();
+        fetchFoodList();
     }, []);
 
 

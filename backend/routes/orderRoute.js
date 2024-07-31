@@ -1,10 +1,12 @@
 import express from "express";
-import { authMiddleware } from "../middleware/auth.js";
+import { adminMiddleware, authMiddleware } from "../middleware/auth.js";
 import {
+    allOrders,
     onlinePayment,
     orderById,
     paymentSuccess,
     placeOrder,
+    updateOrder,
     userOrders,
 } from "../controllers/orderController.js";
 
@@ -14,7 +16,8 @@ orderRouter.post("/placeorder", authMiddleware, placeOrder);
 orderRouter.post("/online-payment", authMiddleware, onlinePayment);
 orderRouter.post("/payment/success/:tranId", paymentSuccess);
 orderRouter.get("/user-orders", authMiddleware, userOrders);
+orderRouter.get("/allorders", allOrders);
 orderRouter.get("/:id", authMiddleware, orderById);
-
+orderRouter.put("/:id", authMiddleware, updateOrder);
 
 export default orderRouter;

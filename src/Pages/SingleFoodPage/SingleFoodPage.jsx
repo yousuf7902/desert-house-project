@@ -20,7 +20,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const SingleFoodPage = () => {
     const { id } = useParams();
-    const { url, addToCart } = useContext(StoreContext);
+    const { url, addToCart, userData } = useContext(StoreContext);
     const [foodItem, setFoodItem] = useState({});
     const navigate = useNavigate();
 
@@ -56,9 +56,11 @@ const SingleFoodPage = () => {
                 </button> */}
 
                 <div className="button-container">
-                    <button className="add-to-cart" onClick={() => addToCartHandler(id)}>
-                        Add to Cart
-                    </button>
+                    {!userData.isAdmin && (
+                        <button className="add-to-cart" onClick={() => addToCartHandler(id)}>
+                            Add to Cart
+                        </button>
+                    )}
                     <button className="add-to-cart" onClick={handleGoBack}>
                         Back
                     </button>

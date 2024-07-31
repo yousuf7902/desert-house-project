@@ -83,7 +83,7 @@
 .unpaid-status {
     color: red;
 }
-.shopmore-btn{
+.shopmore-btn {
     text-align: center;
     padding: 10px 20px;
     border: none;
@@ -94,4 +94,13 @@
     font-weight: bold;
     margin-top: 20px;
     color: #666;
+}
+.delivery-man-details {
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 18px;
 }

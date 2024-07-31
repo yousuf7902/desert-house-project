@@ -2,7 +2,7 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
 }
 
 h1 {
@@ -20,7 +20,7 @@ h1 {
 .search-bar input {
     width: 100%;
     padding: 10px;
-    border: 2px solid #FDB6BD;
+    border: 2px solid #fdb6bd;
     border-radius: 25px;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -28,7 +28,7 @@ h1 {
 
 .search-bar input:focus {
     outline: none;
-    box-shadow: 0 0 10px #FFDEE1 ;
+    box-shadow: 0 0 10px #ffdee1;
 }
 
 .order-table {
@@ -38,7 +38,7 @@ h1 {
 }
 
 .order-table th {
-    background-color: #FDB6BD;
+    background-color: #fdb6bd;
     color: #444;
     padding: 15px;
     text-align: center;
@@ -51,8 +51,7 @@ h1 {
     text-align: center;
 }
 
-
-.status {
+.my-order-status {
     padding: 5px 10px;
     border-radius: 20px;
     font-weight: 600;
@@ -60,27 +59,36 @@ h1 {
     text-transform: capitalize;
 }
 
-.status.pending {
+.my-order-status.pending {
     background-color: #f39c12;
     color: white;
 }
-
-.status.completed {
+.my-order-status.confirmed {
     background-color: #2ecc71;
     color: white;
 }
 
-.status.true{
+.my-order-status.out-for-delivery {
+    background-color: #2196f3;
+    color: white;
+}
+
+.my-order-status.delivered {
+    background-color: #9c27b0;
+    color: white;
+}
+
+.my-order-status.true {
     background-color: #2ecc71;
 }
 
-.status.false{
+.my-order-status.false {
     background-color: rgb(255, 109, 109);
 }
 
 .view-details {
     width: 80%;
-    background-color: #FDB6BD;
+    background-color: #fdb6bd;
     color: #444;
     border: none;
     padding: 8px 10px;
@@ -90,5 +98,5 @@ h1 {
 }
 
 .view-details:hover {
-    background-color:#FFDEE1 ;
+    background-color: #ffdee1;
 }

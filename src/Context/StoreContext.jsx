@@ -5,6 +5,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
+    const [userData, setUserData] = useState({});
     const [orderData, setOrderData] = useState(
         localStorage.getItem("order") ? JSON.parse(localStorage.getItem("order")) : {}
     );
@@ -104,12 +105,18 @@ const StoreContextProvider = (props) => {
         setOrderData(data);
     };
 
+    const userDetails = async (token) => {
+        const response = await axios.get(url + "/api/user/userdata", { headers: { token } });
+        setUserData(response.data.userData);
+    };
+
     useEffect(() => {
         async function loadData() {
             await fetchFoodList();
             if (localStorage.getItem("token")) {
                 setToken(localStorage.getItem("token"));
                 await loadCartData(localStorage.getItem("token"));
+                await userDetails(localStorage.getItem("token"));
             }
         }
         loadData();
@@ -131,6 +138,9 @@ const StoreContextProvider = (props) => {
         loadCartData,
         orderData,
         placeOrderData,
+        userData,
+        userDetails,
+        fetchFoodList,
     };
     return <StoreContext.Provider value={contextValue}>{props.children}</StoreContext.Provider>;
 };

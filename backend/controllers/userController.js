@@ -62,4 +62,15 @@ const registerUser = async (req, res) => {
     }
 };
 
-export { loginUser, registerUser };
+//get user by their id
+const userData = async (req, res) => {
+    try {
+        const userData = await userModel.findById(req.body.userId).select("-password");
+        res.json({ success: true, userData });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+export { loginUser, registerUser, userData };

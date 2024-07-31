@@ -1,0 +1,123 @@
+.app-content{
+  display: flex;
+  width: 100% !important;
+}
+.add {
+    width: 70%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffdee1;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    color: #433;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.add form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.add-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-header h1 {
+    margin: 20px 0px;
+    font-size: 2rem;
+    text-align: center;
+    color: #444;
+    padding: 15px 25px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.add-img-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+
+.add-img-upload img {
+    width: 120px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-product-name,
+.add-product-description {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.add-product-name input,
+.add-product-description textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    margin: 5px 0px;
+}
+
+.add-product-name input:focus,
+.add-product-description textarea:focus {
+    border-color: #444;
+    outline: #444;
+}
+
+.add-category-price-stock {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.add-category-price-stock select,
+.add-category-price-stock input {
+    flex: 1;
+    max-width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    margin: 5px 0px;
+}
+
+.add-category-price-stock select:focus,
+.add-category-price-stock input:focus {
+    border-color: #444;
+    outline: #444;
+}
+
+.add-btn {
+    max-width: 200px;
+    border: none;
+    padding: 15px;
+    margin: 20px auto;
+    background-color: white;
+    color: #444;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #ffc0cb;
+    color: #444;
+}

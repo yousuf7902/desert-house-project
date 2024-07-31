@@ -23,6 +23,19 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        orderMessages: [
+            {
+                orderId: {
+                    type: String,
+                },
+                deliveryMan: {
+                    type: String,
+                },
+                deliveryManPhone: {
+                    type: Number,
+                },
+            },
+        ],
         cartData: {
             type: Object,
             default: {},

@@ -9,6 +9,7 @@ const addFood = async (req, res) => {
         description: req.body.description,
         price: req.body.price,
         category: req.body.category,
+        countInStock: req.body.stock,
         image: image_filename,
     });
     try {
@@ -94,4 +95,39 @@ const singleFood = async (req, res) => {
     }
 };
 
-export { addFood, listFood, removeFood, categoryData, latestFoods, popularFoods, singleFood };
+//edit food by their id
+const editFood = async (req, res) => {
+    try {
+        const food = await foodModel.findById({ _id: req.params.id });
+        const { name, description, price, category, stock } = req.body;
+
+        if (req.file) {
+            let filename = `${req.file.filename}`;
+            food.image = filename;
+            //console.log(req.file.filename);
+        }
+
+        food.name = name;
+        food.description = description;
+        food.price = price;
+        food.category = category;
+        food.countInStock = stock;
+        await food.save();
+
+        res.json({ success: true, message: "Product Updated Succesfully" });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+export {
+    addFood,
+    listFood,
+    removeFood,
+    categoryData,
+    latestFoods,
+    popularFoods,
+    singleFood,
+    editFood,
+};

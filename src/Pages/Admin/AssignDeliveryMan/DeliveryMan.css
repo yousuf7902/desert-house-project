@@ -1,0 +1,56 @@
+.delivery-man-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.h1 {
+  text-align: center;
+  color: #282892;
+  margin-bottom: 25px;
+}
+
+.delivery-man-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+
+}
+
+.delivery-man-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.delivery-man-info h2 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.delivery-man-info p {
+  margin: 5px 0;
+  color: #34495e;
+}
+
+.assign-button {
+  background-color: #FFC0CB;
+  color: #333;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.assign-button:hover {
+  background-color: #ffc0cbbd;
+}

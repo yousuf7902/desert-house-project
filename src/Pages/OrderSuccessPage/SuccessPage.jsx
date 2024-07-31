@@ -5,19 +5,23 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const SuccessPage = () => {
-    const { url, token } = useContext(StoreContext);
+    const { url, token, userData, userDetails } = useContext(StoreContext);
     const navigate = useNavigate();
-    const {id}= useParams();
+    const { id } = useParams();
 
     const [orderData, setOrderData] = useState({});
-    
+    const [orderMessage, setOrderMessage] = useState();
+    const [show, setShow] = useState(false);
+
+    console.log(userData);
+
     useEffect(() => {
         const fetchOrder = async () => {
             try {
                 const response = await axios.get(`${url}/api/orders/${id}`, {
                     headers: { token },
                 });
-                console.log(response.data.orderDetails)
+                console.log(response.data.orderDetails);
                 setOrderData(response.data.orderDetails);
             } catch (error) {
                 console.error("Error fetching order:", error.message);
@@ -25,12 +29,22 @@ const SuccessPage = () => {
         };
 
         fetchOrder();
+        userDetails(token);
+
+        if (userData?.orderMessages && userData.orderMessages.length > 0) {
+            userData.orderMessages.forEach((orderMessage) => {
+                console.log(orderMessage._id, id);
+                if (orderMessage.orderId === id) {
+                    setOrderMessage(orderMessage);
+                    setShow(true);
+                }
+            });
+        }
     }, [id, token, url]);
 
-    console.log(orderData)
     const shopMoreHandler = () => {
         navigate("/");
-    }
+    };
 
     return (
         <div className="success-page">
@@ -47,30 +61,44 @@ const SuccessPage = () => {
                         <p>Phone: {orderData?.address?.phone}</p>
                     </div>
                     <div className="order-status">
-                        {orderData?.orderStatus === "Pending" ? (
+                        {orderData?.orderStatus && (
                             <>
                                 Order Status:{" "}
-                                <span style={{ color: "red" }}>{orderData?.orderStatus}</span>
-                            </>
-                        ) : (
-                            <>
-                                Order Status:{" "}
-                                <span style={{ color: "green" }}>{orderData?.orderStatus}</span>
+                                <span
+                                    className={`admin-panel-status ${orderData?.orderStatus?.toLowerCase()}`}
+                                >
+                                    {orderData?.orderStatus}
+                                </span>
                             </>
                         )}
 
                         <p>Payment Method: {orderData?.paymentMethod}</p>
                         {orderData?.isPaid === false ? (
                             <>
-                                Payment Status: <span style={{ color: "red" }}>Not Paid</span>
+                                Payment Status:{" "}
+                                <span className={`admin-status ${orderData?.isPaid}`}>
+                                    Not Paid
+                                </span>
                             </>
                         ) : (
                             <>
-                                Payment Status: <span style={{ color: "green" }}>Paid</span>
+                                Payment Status:{" "}
+                                <span className={`admin-status ${orderData?.isPaid}`}>Paid</span>
                             </>
                         )}
                     </div>
                 </div>
+
+                {show && (
+                    <>
+                        <div className="delivery-man-details">
+                            <h3>Delivery Man Details</h3>
+                            <p>Name: {orderMessage.deliveryMan}</p>
+                            <p>Phone: 0{orderMessage.deliveryManPhone}</p>
+                        </div>
+                    </>
+                )}
+
                 <div className="order-summary">
                     <h3>Order Summary</h3>
                     {orderData?.items?.map((item, index) => (

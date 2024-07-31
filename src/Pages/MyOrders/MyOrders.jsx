@@ -1,40 +1,3 @@
-/* import React, { useContext, useEffect, useState } from "react";
-import "./MyOrders.css";
-import { StoreContext } from "../../Context/StoreContext";
-import axios from "axios";
-
-const MyOrders = () => {
-    const { url, token } = useContext(StoreContext);
-
-    const [myOrders, setMyOrders] = useState();
-
-
-    useEffect(() => {
-        const fetchAllOrders = async () => {
-            try {
-                const res = await axios.get(
-                    `${url}/api/orders/user-orders`,
-
-                    {
-                        headers: { token },
-                    }
-                );
-                setMyOrders(res.data.orders);
-            } catch (error) {
-                console.error("Error fetching order:", error.message);
-            }
-        };
-        fetchAllOrders();
-    }, [url, token]);
-
-    console.log(myOrders)
-
-    return <div></div>;
-};
-
-export default MyOrders;
- */
-
 import React, { useContext, useEffect, useState } from "react";
 import "./MyOrders.css";
 import { StoreContext } from "../../Context/StoreContext";
@@ -71,11 +34,10 @@ const MyOrders = () => {
                       order.orderStatus.toLowerCase().includes(searchTerm.toLowerCase())
               );
 
-    
     const viewDetailsHandler = (order_id) => {
-        navigate(`/order-success/${order_id}`)
-    }
- 
+        navigate(`/order-success/${order_id}`);
+    };
+
     return (
         <div className="my-orders">
             <h1>My Orders ({myOrders?.length})</h1>
@@ -102,7 +64,7 @@ const MyOrders = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredOrders.map((order, index) => (
+                    {filteredOrders?.map((order, index) => (
                         <tr key={order._id}>
                             <td>{index + 1}</td>
                             <td>{order._id}</td>
@@ -112,13 +74,15 @@ const MyOrders = () => {
                             <td>{order.paymentMethod}</td>
                             <td>
                                 {order.isPaid ? (
-                                    <span className={`status ${order.isPaid}`}>Paid</span>
+                                    <span className={`my-order-status ${order.isPaid}`}>Paid</span>
                                 ) : (
-                                    <span className={`status ${order.isPaid}`}>Due</span>
+                                    <span className={`my-order-status ${order.isPaid}`}>Due</span>
                                 )}
                             </td>
                             <td>
-                                <span className={`status ${order.orderStatus.toLowerCase()}`}>
+                                <span
+                                    className={`my-order-status ${order.orderStatus.toLowerCase()}`}
+                                >
                                     {order.orderStatus}
                                 </span>
                             </td>

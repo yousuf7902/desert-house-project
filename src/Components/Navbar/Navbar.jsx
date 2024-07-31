@@ -6,13 +6,17 @@ import { StoreContext } from "../../Context/StoreContext";
 import { FiLogOut } from "react-icons/fi";
 import { FaShoppingBag } from "react-icons/fa";
 import { FaBagShopping } from "react-icons/fa6";
+import { RiDashboardHorizontalFill } from "react-icons/ri";
+import { IoMdAddCircle } from "react-icons/io";
+import { FaList } from "react-icons/fa";
+import { FaListCheck } from "react-icons/fa6";
+import { FaUser } from "react-icons/fa";
+
 const Navbar = ({ setShowLogin }) => {
     const [menu, setMenu] = useState("home");
-    const { token, setToken, cartItems, food_list, url } = useContext(StoreContext);
+    const { token, setToken, cartItems, food_list, url, userData } = useContext(StoreContext);
     const [searchTerm, setSearchTerm] = useState("");
     const [searchData, setSearchData] = useState("");
-
-    console.log(cartItems);
 
     const navigate = useNavigate();
     const logout = () => {
@@ -20,6 +24,7 @@ const Navbar = ({ setShowLogin }) => {
         localStorage.removeItem("order");
         setToken("");
         navigate("/");
+        window.location.reload();
     };
 
     const searchHandler = (e) => {
@@ -31,6 +36,12 @@ const Navbar = ({ setShowLogin }) => {
             food_list.filter((food) => food.name.toLowerCase().includes(term.toLowerCase()));
 
         setSearchData(data);
+    };
+
+    const itemHandler = (id) => {
+        navigate(`/foods/${id}`);
+        setSearchTerm("");
+        setSearchData("");
     };
 
     return (
@@ -89,7 +100,11 @@ const Navbar = ({ setShowLogin }) => {
                         <div className="search-results">
                             {searchData &&
                                 searchData.map((item, index) => (
-                                    <div key={index} className="search-item">
+                                    <div
+                                        key={index}
+                                        className="search-item"
+                                        onClick={() => itemHandler(item._id)}
+                                    >
                                         <div>
                                             <img
                                                 src={url + "/images/" + item.image}
@@ -108,11 +123,15 @@ const Navbar = ({ setShowLogin }) => {
                 </div>
 
                 <div className="navbar-search-icon">
-                    <Link to="/cart">
-                        <img src={assets.basket_icon} alt="basket-icon" />
-                    </Link>
-                    {Object.keys(cartItems).length > 0 && (
-                        <span className="dot">{Object.keys(cartItems).length}</span>
+                    {!userData?.isAdmin && (
+                        <>
+                            <Link to="/cart">
+                                <img src={assets.basket_icon} alt="basket-icon" />
+                            </Link>
+                            {Object?.keys(cartItems).length > 0 && (
+                                <span className="dot">{Object.keys(cartItems).length}</span>
+                            )}
+                        </>
                     )}
                     {/* <div className={Object.keys(cartItems).length === 0 ? "" : "dot"}></div> */}
                 </div>
@@ -121,21 +140,72 @@ const Navbar = ({ setShowLogin }) => {
                 ) : (
                     <div className="navbar-profile">
                         <img src={assets.profile_icon} alt="" />
-                        <ul className="nav-profile-dropdown">
-                            <li>
-                                <Link to="/myorders" className="list_style">
-                                    {/* <img src={assets.bag_icon} alt="" /> */}
-                                    <FaBagShopping size={20} />
-                                    <p>Orders</p>
-                                </Link>
-                            </li>
-                            <hr />
-                            <li onClick={logout}>
-                                {/* <img src={assets.logout_icon} alt="" /> */}
-                                <FiLogOut size={20} />
-                                <p>Logout</p>
-                            </li>
-                        </ul>
+
+                        {userData?.isAdmin ? (
+                            <ul className="nav-profile-dropdown">
+                                <li>
+                                    <Link to="/admin/all-orders" className="list_style">
+                                        {/* <img src={assets.bag_icon} alt="" /> */}
+                                        <RiDashboardHorizontalFill size={20} />
+                                        <p>Dashboard</p>
+                                    </Link>
+                                </li>
+                                <hr />
+                                <li>
+                                    <Link to="/admin/all-orders" className="list_style">
+                                        {/* <img src={assets.bag_icon} alt="" /> */}
+                                        <FaListCheck size={20} />
+                                        <p>Orders</p>
+                                    </Link>
+                                </li>
+                                <hr />
+                                <li>
+                                    <Link to="/admin/add-items" className="list_style">
+                                        {/* <img src={assets.bag_icon} alt="" /> */}
+                                        <IoMdAddCircle size={20} />
+                                        <p>Add Items</p>
+                                    </Link>
+                                </li>
+                                <hr />
+                                <li>
+                                    <Link to="/admin/list-items" className="list_style">
+                                        {/* <img src={assets.bag_icon} alt="" /> */}
+                                        <FaList size={20} />
+                                        <p>List Items</p>
+                                    </Link>
+                                </li>
+                                <hr />
+                                <li>
+                                    <Link to="/admin/add-delivery-man" className="list_style">
+                                        {/* <img src={assets.bag_icon} alt="" /> */}
+                                        <FaUser size={20} />
+                                        <p>Add Delivery Man</p>
+                                    </Link>
+                                </li>
+                                <hr />
+                                <li onClick={logout}>
+                                    {/* <img src={assets.logout_icon} alt="" /> */}
+                                    <FiLogOut size={20} />
+                                    <p>Logout</p>
+                                </li>
+                            </ul>
+                        ) : (
+                            <ul className="nav-profile-dropdown">
+                                <li>
+                                    <Link to="/myorders" className="list_style">
+                                        {/* <img src={assets.bag_icon} alt="" /> */}
+                                        <FaBagShopping size={20} />
+                                        <p>Orders</p>
+                                    </Link>
+                                </li>
+                                <hr />
+                                <li onClick={logout}>
+                                    {/* <img src={assets.logout_icon} alt="" /> */}
+                                    <FiLogOut size={20} />
+                                    <p>Logout</p>
+                                </li>
+                            </ul>
+                        )}
                     </div>
                 )}
             </div>

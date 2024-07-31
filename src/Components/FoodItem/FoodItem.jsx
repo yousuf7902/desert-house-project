@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../Context/StoreContext";
 import { Link } from "react-router-dom";
 const FoodItem = ({ id, name, price, description, image, stock }) => {
-    const { cartItems, addToCart, removeFromCart, url, decrementItem } = useContext(StoreContext);
+    const { cartItems, addToCart, removeFromCart, url, decrementItem, userData } = useContext(StoreContext);
     return (
         <div className="food-item">
             <div className="food-item-img-container">
@@ -13,12 +13,14 @@ const FoodItem = ({ id, name, price, description, image, stock }) => {
                 </Link>
                 {!cartItems[id] ? (
                     <>
-                        <img
-                            className="add"
-                            onClick={() => addToCart(id)}
-                            src={assets.add_icon_white}
-                            alt=""
-                        />
+                        {!userData.isAdmin && (
+                            <img
+                                className="add-cart"
+                                onClick={() => addToCart(id)}
+                                src={assets.add_icon_white}
+                                alt=""
+                            />
+                        )}
                     </>
                 ) : (
                     <div className="food-item-counter">
@@ -34,11 +36,15 @@ const FoodItem = ({ id, name, price, description, image, stock }) => {
                             alt=""
                         />
                         <p>{cartItems[id]}</p>
-                        <img onClick={() => {
-                            if(cartItems[id] < stock){
-                                addToCart(id)
-                            }
-                        }} src={assets.add_icon_green} alt="" />
+                        <img
+                            onClick={() => {
+                                if (cartItems[id] < stock) {
+                                    addToCart(id);
+                                }
+                            }}
+                            src={assets.add_icon_green}
+                            alt=""
+                        />
                     </div>
                 )}
                 {stock < 10 ? <p className="food-item-stock">{stock} In stock</p> : null}

@@ -131,12 +131,51 @@ const userOrders = async (req, res) => {
         const orders = await orderModel.find({ userId: req.body.userId }).sort({
             updatedAt: -1,
             createdAt: -1,
-        }); 
-        res.json({success:true, orders})
+        });
+        res.json({ success: true, orders });
     } catch (error) {
         console.log(error);
-        res.json({success:false, message:"Error"})
+        res.json({ success: false, message: "Error" });
     }
 };
 
-export { placeOrder, onlinePayment, paymentSuccess, orderById, userOrders };
+// find all orders of website
+const allOrders = async (req, res) => {
+    try {
+        const allOrders = await orderModel.find().sort({
+            createdAt: -1
+        });
+        res.json({ success: true, allOrders });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+//update a order
+const updateOrder = async (req, res) => {
+    try {
+        const order = await orderModel.findById({ _id: req.params.id });
+
+        if (req.body.status === "Delivered") {
+            order.orderStatus = req.body.status;
+            order.isPaid = true; 
+            await order.save();
+            res.json({ success: true, message: "Order has been updated" });
+        } else if (req.body.status === "Out-For-Delivery") {
+            order.orderStatus = req.body.status;
+            await order.save();
+            let deliveryUrl = `http://localhost:5173/admin/assign-delivery-man/${req.params.id}`;
+            res.json({ url: deliveryUrl });
+        } else {
+            order.orderStatus = req.body.status;
+            await order.save();
+            res.json({ success: true, message: "Order has been updated" });
+        }
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+export { placeOrder, onlinePayment, paymentSuccess, orderById, userOrders, allOrders, updateOrder };
