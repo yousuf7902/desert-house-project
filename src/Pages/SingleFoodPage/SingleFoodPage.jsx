@@ -1,17 +1,3 @@
-/* import React from 'react'
-import "./SingleFoodPage.css"
-
-const SingleFoodPage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default SingleFoodPage
- */
-
 import React, { useContext, useEffect, useState } from "react";
 import "./SingleFoodPage.css";
 import { StoreContext } from "../../Context/StoreContext";
@@ -23,6 +9,7 @@ const SingleFoodPage = () => {
     const { url, addToCart, userData } = useContext(StoreContext);
     const [foodItem, setFoodItem] = useState({});
     const navigate = useNavigate();
+    console.log(foodItem.countInStock);
 
     useEffect(() => {
         const fetchSingleFood = async () => {
@@ -47,16 +34,13 @@ const SingleFoodPage = () => {
             </div>
             <div className="food-details">
                 <h1>{foodItem.name}</h1>
+                {foodItem.countInStock === 0 ? <h1>Out of stock</h1> : null}
                 <p className="category">Category: {foodItem.category}</p>
                 <p className="description">{foodItem.description}</p>
                 <p className="price">{foodItem.price} Tk</p>
                 <p className="total-sell">Total Sold: {foodItem.totalSell}</p>
-                {/* <button className="add-to-cart" onClick={() => addToCartHandler(id)}>
-                    Add to Cart
-                </button> */}
-
                 <div className="button-container">
-                    {!userData.isAdmin && (
+                    {!userData.isAdmin && foodItem.countInStock > 0 && (
                         <button className="add-to-cart" onClick={() => addToCartHandler(id)}>
                             Add to Cart
                         </button>

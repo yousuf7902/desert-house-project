@@ -38,7 +38,6 @@ const ListItems = ({ url }) => {
     };
 
     const editFood = async (foodId) => {
-        //const res=await
         navigate(`/admin/list-items/edit/${foodId}`);
     };
     useEffect(() => {
@@ -47,11 +46,11 @@ const ListItems = ({ url }) => {
 
     return (
         <>
-            <h1 className="list-header">All Deserts List</h1>
+            <h1 className="list-header">All Deserts List ({list.length})</h1>
             <div className="search-bar">
                 <input
                     type="text"
-                    placeholder="Search orders..."
+                    placeholder="Search deserts by name or category..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -64,16 +63,25 @@ const ListItems = ({ url }) => {
                         <b>Category</b>
                         <b>Price</b>
                         <b>Stock</b>
+                        <b>Sold</b>
                         <b>Action</b>
                     </div>
                     {filteredList.map((item, index) => {
                         return (
-                            <div key={index} className="list-table-format">
+                            <div
+                                key={index}
+                                className={`list-table-format  ${
+                                    item.countInStock === 0 ? "out-of-stock-list" : ""
+                                }`}
+                            >
                                 <img src={`${url}/images/` + item.image} alt="" />
                                 <p>{item.name}</p>
                                 <p>{item.category}</p>
                                 <p>{item.price}tk</p>
-                                <p>{item.countInStock}</p>
+                                <p>
+                                    {item.countInStock === 0 ? "Out Of Stock" : item.countInStock}
+                                </p>
+                                <p>{item.totalSell}</p>
                                 <div className="btn-area">
                                     <button
                                         onClick={() => removeFood(item._id)}

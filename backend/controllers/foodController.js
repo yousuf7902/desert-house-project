@@ -24,7 +24,7 @@ const addFood = async (req, res) => {
 //all food list
 const listFood = async (req, res) => {
     try {
-        const foods = await foodModel.find({});
+        const foods = await foodModel.find({}).sort({ createdAt: -1 });
         res.json({ success: true, data: foods });
     } catch (error) {
         console.log(error);

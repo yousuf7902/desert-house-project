@@ -5,6 +5,24 @@
     font-family: "Arial", sans-serif;
 }
 
+.my-orders-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.my-orders-details{
+    background-color: #ffdee1;
+    padding: 10px 25px;
+    border-radius: 25px;
+}
+
+.my-orders-header h2 {
+    text-align: center;
+    color: #282892;
+}
+
 h1 {
     color: #2c3e50;
     margin-bottom: 20px;

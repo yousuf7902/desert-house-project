@@ -74,6 +74,8 @@ h1 {
 
 .button-container {
     display: flex;
+    align-items: center;
+    justify-items: center;
     gap: 10px;
 }
 

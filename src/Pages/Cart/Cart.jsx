@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import "./Cart.css";
-import { food_list } from "./../../assets/assets";
 import { StoreContext } from "../../Context/StoreContext";
 import { useNavigate } from "react-router-dom";
 const Cart = ({ setShowLogin }) => {
@@ -14,7 +13,12 @@ const Cart = ({ setShowLogin }) => {
         incrementItem,
         addCartToDb,
         token,
+        fetchFoodList,
     } = useContext(StoreContext);
+
+    useEffect(()=>{
+        fetchFoodList();
+    }, [])
 
     const navigate = useNavigate();
 
@@ -26,7 +30,7 @@ const Cart = ({ setShowLogin }) => {
             setShowLogin(true);
         }
     };
-    console.log(setShowLogin);
+
     const orderNowHandler = () => {
         navigate("/");
     };
@@ -118,7 +122,12 @@ const Cart = ({ setShowLogin }) => {
                                 </div>
                             </div>
                             {/* <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button> */}
-                            <button onClick={checkoutHandler}>PROCEED TO CHECKOUT</button>
+                            <button
+                                onClick={checkoutHandler}
+                                
+                            >
+                                PROCEED TO CHECKOUT
+                            </button>
                         </div>
                         <div className="cart-promocode">
                             <div>

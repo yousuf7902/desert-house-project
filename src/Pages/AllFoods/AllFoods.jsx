@@ -1,37 +1,3 @@
-/* import React, { useContext, useEffect, useState } from "react";
-import "./AllFoods.css";
-import { StoreContext } from "../../Context/StoreContext";
-import { useSearchParams } from "react-router-dom";
-import FoodDisplay from "../../Components/FoodDisplay/FoodDisplay";
-
-const AllFoods = () => {
-    const { food_list } = useContext(StoreContext);
-    const [searchParams] = useSearchParams();
-    const categoryData = searchParams.get("category");
-    const [category, setCategory] = useState("All");
-
-    useEffect(() => {
-        if (categoryData !== null) {
-            setCategory(categoryData.toLowerCase());
-        }
-    }, []);
-
-    console.log(category);
-    return (
-        <div>
-            <div className="header-foods">
-                <h1 className="">{category === "All" ? "FOODS" : category.toUpperCase()}</h1>
-                <p className="">From Our Kitchen to Your Table!</p>
-            </div>
-
-            <FoodDisplay category={category}/>
-        </div>
-    );
-};
-
-export default AllFoods;
- */
-
 import React, { useContext, useEffect, useState } from "react";
 import "./AllFoods.css";
 import { StoreContext } from "../../Context/StoreContext";

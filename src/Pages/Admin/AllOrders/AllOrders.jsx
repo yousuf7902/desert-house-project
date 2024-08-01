@@ -1,46 +1,8 @@
-/* import React, { useContext, useEffect, useState } from "react";
-import "./MyOrders.css";
-import { StoreContext } from "../../Context/StoreContext";
-import axios from "axios";
-
-const MyOrders = () => {
-    const { url, token } = useContext(StoreContext);
-
-    const [myOrders, setMyOrders] = useState();
-
-
-    useEffect(() => {
-        const fetchAllOrders = async () => {
-            try {
-                const res = await axios.get(
-                    `${url}/api/orders/user-orders`,
-
-                    {
-                        headers: { token },
-                    }
-                );
-                setMyOrders(res.data.orders);
-            } catch (error) {
-                console.error("Error fetching order:", error.message);
-            }
-        };
-        fetchAllOrders();
-    }, [url, token]);
-
-    console.log(myOrders)
-
-    return <div></div>;
-};
-
-export default MyOrders;
- */
-
 import React, { useContext, useEffect, useState } from "react";
 import "./AllOrders.css";
 import { StoreContext } from "../../../Context/StoreContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-//import { useNavigate } from "react-router-dom";
 
 const AllOrders = () => {
     const { url, token } = useContext(StoreContext);
@@ -62,6 +24,12 @@ const AllOrders = () => {
     useEffect(() => {
         fetchAllOrders();
     }, [url, token]);
+
+
+    const totalSells = allOrders.filter((order) => order.orderStatus === "Delivered");
+    const totalAmount = totalSells.reduce((acc, item) => acc + item.totalAmount, 0);
+    
+    console.log(totalSells)
 
     const filteredOrders =
         searchTerm === ""
@@ -93,7 +61,13 @@ const AllOrders = () => {
 
     return (
         <div className="my-orders">
-            <h1>All Orders ({allOrders?.length})</h1>
+            <div className="my-orders-header">
+                <h1>All Orders ({allOrders?.length})</h1>
+                <div className="my-orders-details">
+                    <h2>Total Earnings : {totalAmount} tk</h2>
+                    <h2>Total Foods Sell: {totalSells.length}</h2>
+                </div>
+            </div>
             <div className="search-bar">
                 <input
                     type="text"

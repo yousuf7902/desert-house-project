@@ -129,8 +129,8 @@ const orderById = async (req, res) => {
 const userOrders = async (req, res) => {
     try {
         const orders = await orderModel.find({ userId: req.body.userId }).sort({
-            updatedAt: -1,
             createdAt: -1,
+            updatedAt: 1,
         });
         res.json({ success: true, orders });
     } catch (error) {
@@ -143,7 +143,7 @@ const userOrders = async (req, res) => {
 const allOrders = async (req, res) => {
     try {
         const allOrders = await orderModel.find().sort({
-            createdAt: -1
+            createdAt: -1,
         });
         res.json({ success: true, allOrders });
     } catch (error) {
@@ -159,7 +159,7 @@ const updateOrder = async (req, res) => {
 
         if (req.body.status === "Delivered") {
             order.orderStatus = req.body.status;
-            order.isPaid = true; 
+            order.isPaid = true;
             await order.save();
             res.json({ success: true, message: "Order has been updated" });
         } else if (req.body.status === "Out-For-Delivery") {

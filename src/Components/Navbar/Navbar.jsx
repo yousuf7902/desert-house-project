@@ -133,7 +133,6 @@ const Navbar = ({ setShowLogin }) => {
                             )}
                         </>
                     )}
-                    {/* <div className={Object.keys(cartItems).length === 0 ? "" : "dot"}></div> */}
                 </div>
                 {!token ? (
                     <button onClick={() => setShowLogin(true)}>Log In</button>
@@ -145,46 +144,33 @@ const Navbar = ({ setShowLogin }) => {
                             <ul className="nav-profile-dropdown">
                                 <li>
                                     <Link to="/admin/all-orders" className="list_style">
-                                        {/* <img src={assets.bag_icon} alt="" /> */}
-                                        <RiDashboardHorizontalFill size={20} />
-                                        <p>Dashboard</p>
-                                    </Link>
-                                </li>
-                                <hr />
-                                <li>
-                                    <Link to="/admin/all-orders" className="list_style">
-                                        {/* <img src={assets.bag_icon} alt="" /> */}
                                         <FaListCheck size={20} />
                                         <p>Orders</p>
                                     </Link>
                                 </li>
                                 <hr />
                                 <li>
-                                    <Link to="/admin/add-items" className="list_style">
-                                        {/* <img src={assets.bag_icon} alt="" /> */}
-                                        <IoMdAddCircle size={20} />
-                                        <p>Add Items</p>
-                                    </Link>
-                                </li>
-                                <hr />
-                                <li>
                                     <Link to="/admin/list-items" className="list_style">
-                                        {/* <img src={assets.bag_icon} alt="" /> */}
                                         <FaList size={20} />
                                         <p>List Items</p>
                                     </Link>
                                 </li>
                                 <hr />
                                 <li>
+                                    <Link to="/admin/add-items" className="list_style">
+                                        <IoMdAddCircle size={20} />
+                                        <p>Add Items</p>
+                                    </Link>
+                                </li>
+                                <hr />
+                                <li>
                                     <Link to="/admin/add-delivery-man" className="list_style">
-                                        {/* <img src={assets.bag_icon} alt="" /> */}
                                         <FaUser size={20} />
                                         <p>Add Delivery Man</p>
                                     </Link>
                                 </li>
                                 <hr />
                                 <li onClick={logout}>
-                                    {/* <img src={assets.logout_icon} alt="" /> */}
                                     <FiLogOut size={20} />
                                     <p>Logout</p>
                                 </li>
@@ -193,14 +179,12 @@ const Navbar = ({ setShowLogin }) => {
                             <ul className="nav-profile-dropdown">
                                 <li>
                                     <Link to="/myorders" className="list_style">
-                                        {/* <img src={assets.bag_icon} alt="" /> */}
                                         <FaBagShopping size={20} />
                                         <p>Orders</p>
                                     </Link>
                                 </li>
                                 <hr />
                                 <li onClick={logout}>
-                                    {/* <img src={assets.logout_icon} alt="" /> */}
                                     <FiLogOut size={20} />
                                     <p>Logout</p>
                                 </li>

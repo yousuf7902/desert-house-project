@@ -13,14 +13,15 @@ const FoodItem = ({ id, name, price, description, image, stock }) => {
                 </Link>
                 {!cartItems[id] ? (
                     <>
-                        {!userData.isAdmin && (
-                            <img
-                                className="add-cart"
-                                onClick={() => addToCart(id)}
-                                src={assets.add_icon_white}
-                                alt=""
-                            />
-                        )}
+                        {!userData.isAdmin &&
+                            stock > 0 && (
+                                <img
+                                    className="add-cart"
+                                    onClick={() => addToCart(id)}
+                                    src={assets.add_icon_white}
+                                    alt=""
+                                />
+                            )}
                     </>
                 ) : (
                     <div className="food-item-counter">
@@ -47,7 +48,11 @@ const FoodItem = ({ id, name, price, description, image, stock }) => {
                         />
                     </div>
                 )}
-                {stock < 10 ? <p className="food-item-stock">{stock} In stock</p> : null}
+                {stock === 0 ? (
+                    <p className="food-item-stock">Out of stock</p>
+                ) : (
+                    <p className="food-item-stock">{stock} In stock</p>
+                )}
             </div>
             <Link to={`/foods/${id}`}>
                 <div className="food-item-info">

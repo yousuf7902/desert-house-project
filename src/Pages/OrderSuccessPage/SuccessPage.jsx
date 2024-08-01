@@ -30,7 +30,9 @@ const SuccessPage = () => {
 
         fetchOrder();
         userDetails(token);
+    }, [id, token, url]);
 
+    useEffect(() => {
         if (userData?.orderMessages && userData.orderMessages.length > 0) {
             userData.orderMessages.forEach((orderMessage) => {
                 console.log(orderMessage._id, id);
@@ -40,9 +42,10 @@ const SuccessPage = () => {
                 }
             });
         }
-    }, [id, token, url]);
+    }, [userData, show, orderMessage]);
 
     const shopMoreHandler = () => {
+        setShow(false);
         navigate("/");
     };
 
@@ -108,15 +111,15 @@ const SuccessPage = () => {
                                 <h4>{item.name}</h4>
                                 <p>Quantity: {item.quantity}</p>
                                 <p>
-                                    Price: ${item.price} X {item.quantity} ={" "}
-                                    {(item.price * item.quantity).toFixed(2)}
+                                    Price: {item.price} X {item.quantity} ={" "}
+                                    {(item.price * item.quantity).toFixed(2)} TK
                                 </p>
                             </div>
                         </div>
                     ))}
                     <div className="total-amount">
-                        <h3>Shipping Price: $60</h3>
-                        <h3>Total Amount: ${orderData?.totalAmount}</h3>
+                        <h3>Shipping Price: 60 TK</h3>
+                        <h3>Total Amount: {orderData?.totalAmount} TK</h3>
                         <button type="submit" onClick={shopMoreHandler} className="shopmore-btn">
                             Order More...
                         </button>
