@@ -5,14 +5,14 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const ListItems = ({ url }) => {
-    const [list, setList] = useState([]);
+    const [lists, setLists] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
 
     const filteredList =
         searchTerm === ""
-            ? list
-            : list?.filter(
+            ? lists
+            : lists?.filter(
                   (food) =>
                       food.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
                       food.category.toLowerCase().includes(searchTerm.toLowerCase())
