@@ -19,28 +19,7 @@ const StoreContextProvider = (props) => {
         } else {
             setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
         }
-        /* if (token) {
-            await axios.post(url + "/api/cart/add", { itemId }, { headers: { token } });
-        } */
     };
-
-    /* const decrementItem = async(itemId) => {
-        if (cartItems[itemId] === 0) {
-            setCartItems((prev) => {
-                const updatedCart = { ...prev };
-                if (updatedCart[itemId]) {
-                    delete updatedCart[itemId];
-                }
-                return updatedCart;
-            });
-        } else {
-            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
-        }
-
-        if(token){
-            await axios.put(url + "/api/cart/decrement", {itemId}, {headers:{token}});
-        }
-    } */
 
     const decrementItem = (itemId) => {
         if (cartItems[itemId] === 0) {
@@ -68,9 +47,6 @@ const StoreContextProvider = (props) => {
             }
             return updatedCart;
         });
-        /* if (token) {
-            await axios.post(url + "/api/cart/remove", { itemId }, { headers: { token } });
-        } */
     };
 
     const addCartToDb = async () => {
