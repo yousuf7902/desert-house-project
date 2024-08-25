@@ -65,12 +65,11 @@ const EditItems = ({ url }) => {
             setTimeout(() => {
                 navigate("/admin/list-items");
             }, 1000);
-
         } else {
             toast.error(response.data.message);
         }
-
     };
+
     return (
         <div className="add">
             <div className="add-header">
@@ -134,10 +133,12 @@ const EditItems = ({ url }) => {
                         <input
                             onChange={onChangeHandler}
                             value={data.price}
-                            type="text"
+                            type="number"
                             name="price"
                             placeholder="Food Price..."
                             required
+                            min="0"
+                            step="0.01"
                         />
                     </div>
 
@@ -146,10 +147,11 @@ const EditItems = ({ url }) => {
                         <input
                             onChange={onChangeHandler}
                             value={data.stock}
-                            type="text"
+                            type="number"
                             name="stock"
                             placeholder="Enter stock..."
                             required
+                            min="0"
                         />
                     </div>
                 </div>

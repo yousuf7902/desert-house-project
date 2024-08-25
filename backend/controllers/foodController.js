@@ -12,6 +12,7 @@ const addFood = async (req, res) => {
         countInStock: req.body.stock,
         image: image_filename,
     });
+    
     try {
         await food.save();
         res.json({ success: true, message: "Food Added" });
@@ -61,7 +62,7 @@ const categoryData = async (req, res) => {
 //latest foods based on createTime
 const latestFoods = async (req, res) => {
     try {
-        const latestFoods = await foodModel.find().sort({ createdAt: -1 });
+        const latestFoods = await foodModel.find({}).sort({ createdAt: -1 });
         res.json({ success: true, latestFoods });
     } catch (error) {
         console.log(error);
@@ -72,7 +73,7 @@ const latestFoods = async (req, res) => {
 //popular foods based on the total sell
 const popularFoods = async (req, res) => {
     try {
-        const popularFoods = await foodModel.find().sort({
+        const popularFoods = await foodModel.find({}).sort({
             totalSell: -1,
         });
         res.json({ success: true, popularFoods });
@@ -104,7 +105,6 @@ const editFood = async (req, res) => {
         if (req.file) {
             let filename = `${req.file.filename}`;
             food.image = filename;
-            //console.log(req.file.filename);
         }
 
         food.name = name;

@@ -26,6 +26,7 @@ const DeliveryMan = () => {
                 orderId: id,
                 deliveryMenId: manId,
             };
+            
             const res = await axios.post(`${url}/api/delivery-man/assign`, data);
             if (res.data.success) {
                 toast.success(res.data.message);

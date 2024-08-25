@@ -26,10 +26,11 @@
     cursor: pointer;
 }
 .cart-bottom {
-    margin-top: 80px;
+    margin: 80px auto;
+    width: 60%;
     display: flex;
-    justify-content: space-between;
-    gap: max(12vw, 20px);
+    align-items: center;
+    justify-content: center;
 }
 .cart-total {
     flex: 1;

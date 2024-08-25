@@ -15,8 +15,8 @@ const AddDeliveryMan = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prevState) => ({
-            ...prevState,
+        setFormData((prevData) => ({
+            ...prevData,
             [name]: value,
         }));
     };

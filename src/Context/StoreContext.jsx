@@ -9,6 +9,7 @@ const StoreContextProvider = (props) => {
     const [orderData, setOrderData] = useState(
         localStorage.getItem("order") ? JSON.parse(localStorage.getItem("order")) : {}
     );
+
     const url = "http://localhost:4000";
     const [token, setToken] = useState("");
     const [food_list, setFoodList] = useState([]);
@@ -95,6 +96,7 @@ const StoreContextProvider = (props) => {
                 await userDetails(localStorage.getItem("token"));
             }
         }
+        
         loadData();
     }, []);
 

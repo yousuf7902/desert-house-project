@@ -19,6 +19,7 @@ const Navbar = ({ setShowLogin }) => {
     const [searchData, setSearchData] = useState("");
 
     const navigate = useNavigate();
+
     const logout = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("order");

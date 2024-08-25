@@ -25,11 +25,9 @@ const AllOrders = () => {
         fetchAllOrders();
     }, [url, token]);
 
-
     const totalSells = allOrders.filter((order) => order.orderStatus === "Delivered");
     const totalAmount = totalSells.reduce((acc, item) => acc + item.totalAmount, 0);
-    
-    console.log(totalSells)
+
 
     const filteredOrders =
         searchTerm === ""
@@ -41,23 +39,28 @@ const AllOrders = () => {
                       order.orderStatus.toLowerCase().includes(searchTerm.toLowerCase())
               );
 
-
     const viewDetailsHandler = (order_id) => {
         navigate(`/order-success/${order_id}`);
     };
 
-    const onChangeHandler = async(foodId, e) => {
+    const onChangeHandler = async (ordereId, e) => {
         const status = e.target.value;
-        await axios.put(`${url}/api/orders/${foodId}`, {status}, {
-            headers:{token}
-        }).then((res) => {
-            if(res.data.url){
-                window.location.replace(res.data.url);
-            }
-        });
+        
+        await axios
+            .put(
+                `${url}/api/orders/${ordereId}`,
+                { status },
+                {
+                    headers: { token },
+                }
+            )
+            .then((res) => {
+                if (res.data.url) {
+                    window.location.replace(res.data.url);
+                }
+            });
         await fetchAllOrders();
     };
-
 
     return (
         <div className="my-orders">

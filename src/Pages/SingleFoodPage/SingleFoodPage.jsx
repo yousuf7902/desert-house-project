@@ -9,7 +9,6 @@ const SingleFoodPage = () => {
     const { url, addToCart, userData } = useContext(StoreContext);
     const [foodItem, setFoodItem] = useState({});
     const navigate = useNavigate();
-    console.log(foodItem.countInStock);
 
     useEffect(() => {
         const fetchSingleFood = async () => {
@@ -23,9 +22,9 @@ const SingleFoodPage = () => {
         navigate("/cart");
     };
 
-     const handleGoBack = () => {
-         navigate(-1); 
-     };
+    const handleGoBack = () => {
+        navigate(-1);
+    };
 
     return (
         <div className="single-food-page">

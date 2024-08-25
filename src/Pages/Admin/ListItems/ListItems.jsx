@@ -27,6 +27,10 @@ const ListItems = ({ url }) => {
         }
     };
 
+    useEffect(() => {
+        fetchList();
+    }, []);
+
     const removeFood = async (foodId) => {
         const response = await axios.post(`${url}/api/food/remove`, { id: foodId });
         await fetchList();
@@ -40,9 +44,6 @@ const ListItems = ({ url }) => {
     const editFood = async (foodId) => {
         navigate(`/admin/list-items/edit/${foodId}`);
     };
-    useEffect(() => {
-        fetchList();
-    }, []);
 
     return (
         <>
@@ -74,7 +75,7 @@ const ListItems = ({ url }) => {
                                     item.countInStock === 0 ? "out-of-stock-list" : ""
                                 }`}
                             >
-                                <img src={`${url}/images/` + item.image} alt="" />
+                                <img src={`${url}/images/`+ item.image} alt="" />
                                 <p>{item.name}</p>
                                 <p>{item.category}</p>
                                 <p>{item.price}tk</p>

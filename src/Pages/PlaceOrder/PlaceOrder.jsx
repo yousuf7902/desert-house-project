@@ -25,6 +25,7 @@ const PlaceOrder = () => {
             };
         }
     });
+
     console.log(data);
     const [paymentMethod, setPaymentMethod] = useState("");
 
@@ -82,6 +83,7 @@ const PlaceOrder = () => {
                             headers: { token },
                         }
                     );
+                    
                     placeOrderData(res.data.order);
                     window.location.replace(res.data.url);
                 } catch (error) {

@@ -32,7 +32,7 @@ const Cart = ({ setShowLogin }) => {
     };
 
     const orderNowHandler = () => {
-        navigate("/");
+        navigate("/foods");
     };
 
     return (
@@ -85,7 +85,7 @@ const Cart = ({ setShowLogin }) => {
                                                     +
                                                 </button>
                                             </div>
-                                            <p>{item.price * cartItems[item._id]}tk</p>
+                                            <p>{(item.price * cartItems[item._id]).toFixed(2)}tk</p>
                                             <p
                                                 onClick={() => removeFromCart(item._id)}
                                                 className="cross"
@@ -105,7 +105,7 @@ const Cart = ({ setShowLogin }) => {
                             <div>
                                 <div className="cart-total-details">
                                     <p>Subtotal</p>
-                                    <p>{getTotalCartAmount()}tk</p>
+                                    <p>{getTotalCartAmount().toFixed(2)}tk</p>
                                 </div>
                                 <hr />
                                 <div className="cart-total-details">
@@ -116,27 +116,14 @@ const Cart = ({ setShowLogin }) => {
                                 <div className="cart-total-details">
                                     <b>Total</b>
                                     <b>
-                                        {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 60}
+                                        {getTotalCartAmount() === 0
+                                            ? 0
+                                            : (getTotalCartAmount() + 60).toFixed(2)}
                                         tk
                                     </b>
                                 </div>
                             </div>
-                            {/* <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button> */}
-                            <button
-                                onClick={checkoutHandler}
-                                
-                            >
-                                PROCEED TO CHECKOUT
-                            </button>
-                        </div>
-                        <div className="cart-promocode">
-                            <div>
-                                <p>If you have a promo code, Enter it here</p>
-                                <div className="cart-promocode-input">
-                                    <input type="text" placeholder="promo code" />
-                                    <button>Submit</button>
-                                </div>
-                            </div>
+                            <button onClick={checkoutHandler}>PROCEED TO CHECKOUT</button>
                         </div>
                     </div>
                 </>

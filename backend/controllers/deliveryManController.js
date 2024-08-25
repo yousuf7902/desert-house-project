@@ -11,8 +11,6 @@ const addDeliveryMan = async (req, res) => {
             phone: req.body.phone,
         });
 
-        console.log(addDeliveryMan)
-
         await addDeliveryMan.save();
         res.json({ success: true, message: "Delivery Man added successfully" });
     } catch (error) {

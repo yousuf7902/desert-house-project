@@ -13,12 +13,13 @@ const AddItems = ({ url }) => {
         category: "Cake",
         stock: "",
     });
-    
+
     const onChangeHandler = (event) => {
         const name = event.target.name;
         const value = event.target.value;
         setData((data) => ({ ...data, [name]: value }));
     };
+
     const onSubmitHandler = async (event) => {
         event.preventDefault();
         const formData = new FormData();
@@ -102,9 +103,11 @@ const AddItems = ({ url }) => {
                         <input
                             onChange={onChangeHandler}
                             value={data.price}
-                            type="text"
+                            type="number"
                             name="price"
                             placeholder="Food Price..."
+                            min="0"
+                            step="0.01"
                         />
                     </div>
                     <div>
@@ -112,9 +115,10 @@ const AddItems = ({ url }) => {
                         <input
                             onChange={onChangeHandler}
                             value={data.stock}
-                            type="text"
+                            type="number"
                             name="stock"
                             placeholder="Enter stock..."
+                            min="0"
                         />
                     </div>
                 </div>

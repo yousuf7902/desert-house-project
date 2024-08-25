@@ -18,11 +18,14 @@ const ExploreMenu = () => {
         fetchCategoryData();
     }, []);
 
-    const categories = [...new Set(categoryData.map((item) => item))].slice(0, 6);
+    const uniqueCategories = [...new Set(categoryData.map((item) => item.category))].slice(0, 6);
+    const categories = uniqueCategories.map((category) =>
+        categoryData.find((item) => item.category === category)
+    );
 
     const categoryHandler = (category) => {
-      navigate(`/foods?category=${category}`)
-    } 
+        navigate(`/foods?category=${category}`);
+    };
 
     return (
         <div className="explore-menu" id="explore-menu">
@@ -37,13 +40,13 @@ const ExploreMenu = () => {
             <div className="explore-menu-list">
                 {categories.map((item) => {
                     return (
-                            <div
-                                className="explore-menu-list-item"
-                                onClick={() => categoryHandler(item.category)}
-                            >
-                                <img src={url + "/images/" + item.image} alt="" />
-                                <p>{item.category}</p>
-                            </div>
+                        <div
+                            className="explore-menu-list-item"
+                            onClick={() => categoryHandler(item?.category)}
+                        >
+                            <img src={url + "/images/" + item.image} alt="" />
+                            <p>{item?.category}</p>
+                        </div>
                     );
                 })}
             </div>

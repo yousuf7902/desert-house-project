@@ -129,8 +129,8 @@ const orderById = async (req, res) => {
 const userOrders = async (req, res) => {
     try {
         const orders = await orderModel.find({ userId: req.body.userId }).sort({
+            updatedAt: -1,
             createdAt: -1,
-            updatedAt: 1,
         });
         res.json({ success: true, orders });
     } catch (error) {
@@ -142,8 +142,9 @@ const userOrders = async (req, res) => {
 // find all orders of website
 const allOrders = async (req, res) => {
     try {
-        const allOrders = await orderModel.find().sort({
+        const allOrders = await orderModel.find({}).sort({
             createdAt: -1,
+            updatedAt: -1,
         });
         res.json({ success: true, allOrders });
     } catch (error) {
@@ -156,6 +157,7 @@ const allOrders = async (req, res) => {
 const updateOrder = async (req, res) => {
     try {
         const order = await orderModel.findById({ _id: req.params.id });
+        console.log(order)
 
         if (req.body.status === "Delivered") {
             order.orderStatus = req.body.status;
