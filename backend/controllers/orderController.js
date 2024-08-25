@@ -52,7 +52,7 @@ const onlinePayment = async (req, res) => {
             currency: "BDT",
             tran_id: tran_id, // use unique tran_id for each api call
             success_url: `http://localhost:4000/api/orders/payment/success/${tran_id}`,
-            fail_url: "http://localhost:3030/fail",
+            fail_url: `http://localhost:4000/api/orders/payment/failed/${tran_id}`,
             cancel_url: "http://localhost:3030/cancel",
             ipn_url: "http://localhost:3030/ipn",
             shipping_method: "Courier",
@@ -109,6 +109,17 @@ const paymentSuccess = async (req, res) => {
     }
 };
 
+//payment sslcommerz failed
+const paymentFailed = async (req, res) => {
+    try {
+        const order = await orderModel.findOne({ tranId: req.params.tranId });
+        res.redirect(`http://localhost:5173/order-success/${order._id}`);
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
 //Find order by id
 const orderById = async (req, res) => {
     try {
@@ -157,7 +168,7 @@ const allOrders = async (req, res) => {
 const updateOrder = async (req, res) => {
     try {
         const order = await orderModel.findById({ _id: req.params.id });
-        console.log(order)
+        console.log(order);
 
         if (req.body.status === "Delivered") {
             order.orderStatus = req.body.status;
@@ -180,4 +191,13 @@ const updateOrder = async (req, res) => {
     }
 };
 
-export { placeOrder, onlinePayment, paymentSuccess, orderById, userOrders, allOrders, updateOrder };
+export {
+    placeOrder,
+    onlinePayment,
+    paymentSuccess,
+    orderById,
+    userOrders,
+    allOrders,
+    updateOrder,
+    paymentFailed,
+};
