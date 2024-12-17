@@ -53,8 +53,8 @@ const onlinePayment = async (req, res) => {
             total_amount: order.totalAmount,
             currency: "BDT",
             tran_id: tran_id, // use unique tran_id for each api call
-            success_url: `http://localhost:4000/api/orders/payment/success/${tran_id}`,
-            fail_url: `http://localhost:4000/api/orders/payment/failed/${tran_id}`,
+            success_url: `https://desert-house-project.onrender.com/api/orders/payment/success/${tran_id}`,
+            fail_url: `https://desert-house-project.onrender.com/api/orders/payment/failed/${tran_id}`,
             cancel_url: "http://localhost:3030/cancel",
             ipn_url: "http://localhost:3030/ipn",
             shipping_method: "Courier",
