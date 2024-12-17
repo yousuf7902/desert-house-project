@@ -104,7 +104,7 @@ const paymentSuccess = async (req, res) => {
 
         updateOrder.isPaid = true;
         await updateOrder.save();
-        res.redirect(`http://localhost:5173/order-success/${updateOrder._id}`);
+        res.redirect(`https://desert-house.netlify.app/order-success/${updateOrder._id}`);
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Error" });
@@ -115,7 +115,7 @@ const paymentSuccess = async (req, res) => {
 const paymentFailed = async (req, res) => {
     try {
         const order = await orderModel.findOne({ tranId: req.params.tranId });
-        res.redirect(`http://localhost:5173/order-success/${order._id}`);
+        res.redirect(`https://desert-house.netlify.app/order-success/${order._id}`);
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Error" });
@@ -180,7 +180,7 @@ const updateOrder = async (req, res) => {
         } else if (req.body.status === "Out-For-Delivery") {
             order.orderStatus = req.body.status;
             await order.save();
-            let deliveryUrl = `http://localhost:5173/admin/assign-delivery-man/${req.params.id}`;
+            let deliveryUrl = `https://desert-house.netlify.app/admin/assign-delivery-man/${req.params.id}`;
             res.json({ url: deliveryUrl });
         } else {
             order.orderStatus = req.body.status;
