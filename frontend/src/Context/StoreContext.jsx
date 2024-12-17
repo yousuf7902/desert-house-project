@@ -10,7 +10,8 @@ const StoreContextProvider = (props) => {
         localStorage.getItem("order") ? JSON.parse(localStorage.getItem("order")) : {}
     );
 
-    const url = "http://localhost:4000";
+    /* const url = "http://localhost:4000"; */
+    const url = "https://desert-house-project.onrender.com";
     const [token, setToken] = useState("");
     const [food_list, setFoodList] = useState([]);
 
