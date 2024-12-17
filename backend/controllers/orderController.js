@@ -39,7 +39,9 @@ const placeOrder = async (req, res) => {
 //online payment sslcommerz
 const onlinePayment = async (req, res) => {
     try {
+
         const tran_id = new ObjectId().toString();
+        
         const order = await orderModel.findById(req.body._id);
 
         order.tranId = tran_id;

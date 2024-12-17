@@ -9,6 +9,7 @@ const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
+    const [show, setShow] = useState(5);
 
     useEffect(() => {
         const fetchAllOrders = async () => {
@@ -31,7 +32,8 @@ const MyOrders = () => {
                   (order) =>
                       order._id?.toLowerCase().includes(searchTerm.toLowerCase()) ||
                       order.paymentMethod.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                      order.orderStatus.toLowerCase().includes(searchTerm.toLowerCase())
+                      order.orderStatus.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                      order.createdAt.slice(0, 10).includes(searchTerm)
               );
 
     const viewDetailsHandler = (order_id) => {

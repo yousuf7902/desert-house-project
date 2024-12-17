@@ -42,10 +42,10 @@ const App = () => {
                     <Route path="/foods/:id" element={<SingleFoodPage />} />
                     <Route path="/admin/add-items" element={<AddItems url={url} />} />
                     <Route path="/admin/list-items" element={<ListItems url={url} />} />
-                    <Route path="/admin/list-items/edit/:id" element={<EditItems url={url}/>}/>
-                    <Route path="/admin/all-orders" element={<AllOrders/>}/>
-                    <Route path="/admin/assign-delivery-man/:id" element={<DeliveryMan/>}/>
-                    <Route path="/admin/add-delivery-man" element={<AddDeliveryMan/>}/>
+                    <Route path="/admin/list-items/edit/:id" element={<EditItems url={url} />} />
+                    <Route path="/admin/all-orders" element={<AllOrders />} />
+                    <Route path="/admin/assign-delivery-man/:id" element={<DeliveryMan />} />
+                    <Route path="/admin/add-delivery-man" element={<AddDeliveryMan />} />
                 </Routes>
                 <ToastContainer
                     position="top-center"

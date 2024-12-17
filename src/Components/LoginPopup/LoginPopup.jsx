@@ -62,6 +62,8 @@ const LoginPopup = ({ setShowLogin }) => {
                             onChange={onChangeHandler}
                             value={data.name}
                             type="text"
+                            maxLength={20}
+                            minLength={10}
                             placeholder="Your name"
                             required
                         />

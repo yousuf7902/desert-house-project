@@ -18,10 +18,13 @@ const ExploreMenu = () => {
         fetchCategoryData();
     }, []);
 
+
     const uniqueCategories = [...new Set(categoryData.map((item) => item.category))].slice(0, 6);
     const categories = uniqueCategories.map((category) =>
         categoryData.find((item) => item.category === category)
     );
+
+    console.log(categories)
 
     const categoryHandler = (category) => {
         navigate(`/foods?category=${category}`);

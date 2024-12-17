@@ -59,6 +59,7 @@ const AddItems = ({ url }) => {
                         onChange={(e) => setImage(e.target.files[0])}
                         type="file"
                         id="image"
+                        accept=".png, .jpg"
                         hidden
                         required
                     />
